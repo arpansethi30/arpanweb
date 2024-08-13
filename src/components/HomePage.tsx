@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaGithub, FaInstagram } from 'react-icons/fa';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Sphere, MeshDistortMaterial } from '@react-three/drei';
+import { Mesh } from 'three'; // Import Mesh from three
 
 // Custom X logo component
 const XLogo = () => (
@@ -16,10 +17,15 @@ const XLogo = () => (
 
 // 3D Background component
 const AnimatedSphere = () => {
-  const mesh = useRef();
-  useFrame((state) => {
-    mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+  const mesh = useRef<Mesh>(null); // Explicitly type the ref as Mesh
+
+  useFrame(() => {
+    if (mesh.current) {
+      mesh.current.rotation.x += 0.01;
+      mesh.current.rotation.y += 0.01;
+    }
   });
+
   return (
     <Sphere args={[1, 100, 200]} scale={2.5} ref={mesh}>
       <MeshDistortMaterial
