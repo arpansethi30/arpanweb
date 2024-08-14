@@ -7,7 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'midnight-blue': '#0a192f',
+        'off-black': '#0a0a0a',
+        'dark-gray': '#1a1a1a',
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
       },
     },
   },

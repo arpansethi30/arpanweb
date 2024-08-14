@@ -6,7 +6,14 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  @apply bg-midnight-blue text-white;
+  @apply bg-black text-white;
+}
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, #333 1px, transparent 1px),
+    linear-gradient(to bottom, #333 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 @layer utilities {
