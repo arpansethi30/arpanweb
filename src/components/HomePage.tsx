@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import HeroSection from './HeroSection';
 import FeaturedContemplations from './FeaturedContemplations';
 import LatestInsights from './LatestInsights';
+import LatestTweets from './LatestTweets';
 import MusicSection from './MusicSection';
 import Footer from './Footer';
 
@@ -16,6 +17,7 @@ const HomePage: React.FC = () => {
         <HeroSection />
         <FeaturedContemplations />
         <LatestInsights />
+        <LatestTweets />
         <MusicSection />
       </main>
       <Footer />
